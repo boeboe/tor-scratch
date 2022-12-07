@@ -14,7 +14,7 @@ Run [TOR](https://dist.torproject.org) conveniently from a docker scratch contai
 ## Usage
 
 ```console
-$ docker run --rm -p 9050:9050 boeboe/tor-scratch
+$ docker run --rm --network host boeboe/tor-scratch
 ```
 
 Once the docker container has finished starting, you can test it with the following command:
@@ -23,7 +23,9 @@ Once the docker container has finished starting, you can test it with the follow
 $ curl --socks5 localhost:9050 --socks5-hostname localhost:9050 https://check.torproject.org/api/ip
 ```
 
-In order to pass a `torrc` configuration file and modify the proxy port:
+> **NOTE:** If you use do not use host network, you need to force tor to listen on `0.0.0.0` instead of the default `127.0.0.1`
+
+In order to pass a `torrc` configuration file and modify the exposed proxy port:
 
 ```console
 $ cat torrc 
