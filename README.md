@@ -4,6 +4,8 @@ Run [TOR](https://dist.torproject.org) conveniently from a docker scratch contai
  - Containers available on [DockerHub](https://hub.docker.com/r/boeboe/tor-scratch)
  - Sources available on [GitHub](https://github.com/boeboe/tor-scratch)
 
+## Usage
+
 ```console
 $ docker run --rm -p 9050:9050 boeboe/tor-scratch
 ```
@@ -27,10 +29,7 @@ $ docker run -p 8080:9050 -v "$(pwd)"/torrc:/torrc boeboe/tor-scratch tor -f tor
 $ curl --socks5 localhost:8080 --socks5-hostname localhost:8080 https://check.torproject.org/api/ip
 ```
 
-Request configuration change
-Please use this link (GitHub account required) to suggest a change in this image configuration.
+## Request configuration change
 
-
-**Minimal Docker Image with Tor.**
-
+Please use this [link](https://github.com/boeboe/tor-scratch/issues/new/choose) (GitHub account required) to suggest a change in this image configuration.
 
