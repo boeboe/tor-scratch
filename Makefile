@@ -1,7 +1,7 @@
 # General release info
 APP_NAME				= tor-scratch
 DOCKER_ACCOUNT	= boeboe
-VERSION					= 0.4.7.10
+VERSION					= 0.4.7.11
 
 # HELP
 # This will output the help for each task
