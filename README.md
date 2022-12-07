@@ -4,6 +4,13 @@ Run [TOR](https://dist.torproject.org) conveniently from a docker scratch contai
  - Containers available on [DockerHub](https://hub.docker.com/r/boeboe/tor-scratch)
  - Sources available on [GitHub](https://github.com/boeboe/tor-scratch)
 
+[![Docker Build](https://github.com/boeboe/tor-scratch/workflows/Docker/badge.svg)](https://github.com/boeboe/tor-scratch/actions?query=workflow:"Docker")
+[![Docker Stars](https://img.shields.io/docker/stars/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
+[![Docker Pulls](https://img.shields.io/docker/pulls/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
+[![Docker Automated](https://img.shields.io/docker/cloud/automated/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
+[![Docker Build](https://img.shields.io/docker/cloud/build/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
+[![Docker Version](https://img.shields.io/docker/v/boeboe/tor-scratch?sort=semver)](https://hub.docker.com/r/boeboe/tor-scratch)
+
 ## Usage
 
 ```console
