@@ -1,7 +1,8 @@
 # Tor-Scratch Container
 
 Run [TOR](https://dist.torproject.org) conveniently from a docker scratch container.
-Containers available on [DockerHub](https://hub.docker.com/r/boeboe/tor-scratch).
+ - Containers available on [DockerHub](https://hub.docker.com/r/boeboe/tor-scratch)
+ - Sources available on [GitHub](https://github.com/boeboe/tor-scratch)
 
 ```console
 $ docker run --rm -p 9050:9050 boeboe/tor-scratch
