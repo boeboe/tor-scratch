@@ -1,11 +1,11 @@
 # General release info
-APP_NAME				= tor-scratch
-DOCKER_ACCOUNT	= boeboe
-VERSION					= 0.4.7.11
+APP_NAME                = tor-scratch
+DOCKER_ACCOUNT          = boeboe
+VERSION                 = 0.4.8.9
+PLATFORMS               = linux/amd64,linux/arm64,linux/arm/v7
 
 # HELP
 # This will output the help for each task
-# thanks to https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 .PHONY: help
 
 help: ## This help
@@ -13,17 +13,27 @@ help: ## This help
 
 .DEFAULT_GOAL := help
 
-
 #### DOCKER TASKS ###
 
 build: ## Build the container
-	docker build ${DOCKER_BUILD_ARGS} -t $(DOCKER_ACCOUNT)/$(APP_NAME) --build-arg TOR_VERSION=${VERSION} .
+	docker buildx build ${DOCKER_BUILD_ARGS} \
+		--platform $(PLATFORMS) \
+		--build-arg TOR_VERSION=$(VERSION) \
+		-t $(DOCKER_ACCOUNT)/$(APP_NAME):$(VERSION) \
+		-t $(DOCKER_ACCOUNT)/$(APP_NAME):latest \
+		--load .
 
 build-nc: ## Build the container without caching
-	docker build ${DOCKER_BUILD_ARGS} --no-cache -t $(DOCKER_ACCOUNT)/$(APP_NAME) --build-arg TOR_VERSION=${VERSION} .
+	docker buildx build ${DOCKER_BUILD_ARGS} \
+		--platform $(PLATFORMS) \
+		--no-cache \
+		--build-arg TOR_VERSION=$(VERSION) \
+		-t $(DOCKER_ACCOUNT)/$(APP_NAME):$(VERSION) \
+		-t $(DOCKER_ACCOUNT)/$(APP_NAME):latest \
+		--load .
 
 run: ## Run container
-	docker run --name="$(APP_NAME)" $(DOCKER_ACCOUNT)/$(APP_NAME)
+	docker run --name="$(APP_NAME)" $(DOCKER_ACCOUNT)/$(APP_NAME):latest
 
 up: build run ## Build and run container on port configured
 
@@ -34,9 +44,9 @@ stop: ## Stop and remove a running container
 release: build-nc publish ## Make a full release
 
 publish: ## Tag and publish container
-	@echo 'create tag $(VERSION)'
-	docker tag $(DOCKER_ACCOUNT)/$(APP_NAME) $(DOCKER_ACCOUNT)/$(APP_NAME):$(VERSION)
-	docker tag $(DOCKER_ACCOUNT)/$(APP_NAME) $(DOCKER_ACCOUNT)/$(APP_NAME):latest
-	@echo 'publish $(VERSION) to $(DOCKER_ACCOUNT)/$(APP_NAME):$(VERSION)'
-	docker push $(DOCKER_ACCOUNT)/$(APP_NAME):$(VERSION)
-	docker push $(DOCKER_ACCOUNT)/$(APP_NAME):latest
+	docker buildx build ${DOCKER_BUILD_ARGS} \
+		--platform $(PLATFORMS) \
+		--build-arg TOR_VERSION=$(VERSION) \
+		-t $(DOCKER_ACCOUNT)/$(APP_NAME):$(VERSION) \
+		-t $(DOCKER_ACCOUNT)/$(APP_NAME):latest \
+		--push .
