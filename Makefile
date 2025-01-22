@@ -1,7 +1,7 @@
 # General release info
 APP_NAME                = tor-scratch
 DOCKER_ACCOUNT          = boeboe
-VERSION                 = 0.4.8.9
+VERSION                 = 0.4.8.13
 PLATFORMS               = linux/amd64,linux/arm64,linux/arm/v7
 
 # HELP
