@@ -30,12 +30,14 @@ In order to pass a `torrc` configuration file and modify the exposed proxy port:
 ```console
 $ cat torrc 
 Log notice stdout
+HTTPTunnelPort 0.0.0.0:9080
 SocksPort 0.0.0.0:9050
 MaxCircuitDirtiness 30
 
-$ docker run -p 8080:9050 -v "$(pwd)"/torrc:/torrc boeboe/tor-scratch tor -f torrc
+$ docker run -p 8050:9050 -p 8080:9080 -v "$(pwd)"/torrc:/torrc boeboe/tor-scratch tor -f torrc
 
-$ curl --socks5 localhost:8080 --socks5-hostname localhost:8080 https://check.torproject.org/api/ip
+$ curl --socks5 localhost:8050 --socks5-hostname localhost:8050 https://check.torproject.org/api/ip
+$ curl --proxy localhost:8080 https://check.torproject.org/api/ip
 ```
 
 ## Request configuration change
