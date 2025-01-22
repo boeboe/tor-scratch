@@ -3,6 +3,7 @@
 Run [TOR](https://dist.torproject.org) conveniently from a docker scratch container.
  - Containers available on [DockerHub](https://hub.docker.com/r/boeboe/tor-scratch)
  - Sources available on [GitHub](https://github.com/boeboe/tor-scratch)
+ - Tor downloads on [TorProject](https://www.torproject.org/download/tor)
 
 [![Docker Build](https://github.com/boeboe/tor-scratch/actions/workflows/docker-image.yml/badge.svg)](https://github.com/boeboe/tor-scratch/actions/workflows/docker-image.yml)
 [![Docker Stars](https://img.shields.io/docker/stars/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
@@ -40,7 +41,10 @@ $ curl --socks5 localhost:8050 --socks5-hostname localhost:8050 https://check.to
 $ curl --proxy localhost:8080 https://check.torproject.org/api/ip
 ```
 
+## Manual page
+
+Man page of version [0.4.8.13](https://dist.torproject.org/tor-0.4.8.13.tar.gz) can be found [here](./MANPAGE.md).
+
 ## Request configuration change
 
 Please use this [link](https://github.com/boeboe/tor-scratch/issues/new/choose) (GitHub account required) to suggest a change in this image configuration.
-
