@@ -1,4 +1,4 @@
-FROM alpine:edge as build
+FROM alpine:edge AS build
 
 ARG OPENSSL_VERSION=1.1.1s
 ARG OPENSSL_URL="https://www.openssl.org/source/openssl-${OPENSSL_VERSION}.tar.gz"
@@ -11,7 +11,7 @@ ARG XZ_URL="https://tukaani.org/xz/xz-${XZ_VERSION}.tar.gz"
 ARG TOR_VERSION=0.4.8.13
 ARG TOR_URL="https://dist.torproject.org/tor-${TOR_VERSION}.tar.gz"
 
-ENV BUILD_DIR /build
+ENV BUILD_DIR=/build
 RUN mkdir -p "${BUILD_DIR}"
 WORKDIR ${BUILD_DIR}
 
@@ -121,7 +121,7 @@ FROM scratch
 LABEL maintainer="Boeboe <boeboe@github.com>" \
     org.label-schema.vcs-url="https://github.com/boeboe/tor-scratch.git"
 
-ENV BUILD_DIR /build
+ENV BUILD_DIR=/build
 
 COPY --from=build ${BUILD_DIR}/tor/dist/bin/tor /usr/bin/tor
 
