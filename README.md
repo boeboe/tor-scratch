@@ -8,8 +8,7 @@ Run [TOR](https://dist.torproject.org) conveniently from a docker scratch contai
 [![Docker Build](https://github.com/boeboe/tor-scratch/actions/workflows/docker-image.yml/badge.svg)](https://github.com/boeboe/tor-scratch/actions/workflows/docker-image.yml)
 [![Docker Stars](https://img.shields.io/docker/stars/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
 [![Docker Pulls](https://img.shields.io/docker/pulls/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
-[![Docker Automated](https://img.shields.io/docker/cloud/automated/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
-[![Docker Build](https://img.shields.io/docker/cloud/build/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
+[![Docker Image Size](https://img.shields.io/docker/image-size/boeboe/tor-scratch)](https://hub.docker.com/r/boeboe/tor-scratch)
 [![Docker Version](https://img.shields.io/docker/v/boeboe/tor-scratch?sort=semver)](https://hub.docker.com/r/boeboe/tor-scratch)
 
 ## Usage
@@ -43,7 +42,7 @@ $ curl --proxy localhost:8080 https://check.torproject.org/api/ip
 
 ## Manual page
 
-Man page of version [0.4.8.13](https://dist.torproject.org/tor-0.4.8.13.tar.gz) can be found [here](./MANPAGE.md).
+Man page of version [0.4.8.14](https://dist.torproject.org/tor-0.4.8.14.tar.gz) can be found [here](./MANPAGE.md).
 
 ## Request configuration change
 

@@ -1,14 +1,14 @@
 FROM alpine:edge AS build
 
-ARG OPENSSL_VERSION=1.1.1s
+ARG OPENSSL_VERSION=1.1.1w
 ARG OPENSSL_URL="https://www.openssl.org/source/openssl-${OPENSSL_VERSION}.tar.gz"
 ARG LIBEVENT_VERSION=2.1.12-stable
 ARG LIBEVENT_URL="https://github.com/libevent/libevent/releases/download/release-${LIBEVENT_VERSION}/libevent-${LIBEVENT_VERSION}.tar.gz"
 ARG ZLIB_VERSION=1.3.1
 ARG ZLIB_URL="https://zlib.net/zlib-${ZLIB_VERSION}.tar.gz"
-ARG XZ_VERSION=5.2.13
+ARG XZ_VERSION=5.6.4
 ARG XZ_URL="https://tukaani.org/xz/xz-${XZ_VERSION}.tar.gz"
-ARG TOR_VERSION=0.4.8.13
+ARG TOR_VERSION=0.4.8.14
 ARG TOR_URL="https://dist.torproject.org/tor-${TOR_VERSION}.tar.gz"
 
 ENV BUILD_DIR=/build
